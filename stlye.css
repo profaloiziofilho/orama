@@ -1,0 +1,220 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  /*background: linear-gradient(135deg, #e1ecf7 0%, #c5d6eb 100%);*/
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 100%;
+  margin: auto;
+  padding: 42px 32px;
+  border: 1.5px solid rgba(180,200,220,0.65);
+  backdrop-filter: blur(8px);
+  position: relative;
+  text-align: center;
+}
+
+.tela {
+  display: none;
+  animation: fadeIn 0.7s;
+}
+
+.tela.ativa {
+  display: block;
+}
+
+h1, h2 {
+  color: #3382b9;
+  text-shadow: 0 2px 8px #7a8ca233, 0 1px 0 #e1ecf7;
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+}
+
+.icones-funcoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 34px;
+  margin: 36px 0 36px 0;
+}
+
+.icone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(120deg, rgba(220,237,255,0.88) 60%, rgba(200,215,230,0.94) 100%);
+  border-radius: 26px;
+  box-shadow: 
+    0 6px 18px #3382b933,
+    0 1px 4px #2222;
+  border: 1.5px solid #b5c8db;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+  transition: 
+    box-shadow 0.25s, 
+    background 0.25s,
+    border 0.25s,
+    transform 0.18s;
+  overflow: hidden;
+}
+
+.icone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 30%, rgba(52,122,183,0.12) 90%);
+  pointer-events: none;
+}
+
+.icone:hover {
+  box-shadow: 
+    0 12px 36px #3382b9bb,
+    0 2px 12px #5b7fa788;
+  background: linear-gradient(120deg, #d8eaff 20%, #b2bbc7 100%);
+  border: 2px solid #3382b9;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.emoji {
+  font-size: 2.8em;
+  margin-bottom: 13px;
+  color: #3382b9;
+  text-shadow: 
+    0 4px 16px #7a8ca222,
+    0 1px 0 #eaf6fb;
+  filter: drop-shadow(0 0 8px #3382b933);
+}
+
+button {
+  margin: 15px 7px 0 7px;
+  padding: 13px 30px;
+  font-size: 1.05em;
+  font-weight: 500;
+  background: linear-gradient(120deg, #7eb6e3 0%, #d8dde6 100%);
+  color: #245076;
+  border: 1.5px solid #b5c8db;
+  border-radius: 12px;
+  box-shadow: 0 2px 18px #3382b922, 0 1px 4px #7a8ca222;
+  cursor: pointer;
+  transition: 
+    background 0.2s,
+    color 0.2s,
+    border 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(120deg, #3382b9 0%, #7eb6e3 90%);
+  color: #fff;
+  border: 2px solid #3382b9;
+  box-shadow: 0 4px 24px #3382b944;
+  transform: translateY(-2px) scale(1.03);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(18px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* Monitoramento Cardíaco */
+.cardiaco-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 28px 0;
+}
+
+.cardiaco-valor {
+  display: flex;
+  align-items: baseline;
+  font-size: 2.7em;
+  color: #3382b9;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px #5b7fa744;
+}
+
+.bpm-label {
+  font-size: 1em;
+  color: #245076;
+  margin-left: 8px;
+  text-shadow: 0 1px 0 #eaf6fb;
+}
+
+#cardiacoGrafico {
+  background: linear-gradient(135deg, #e1ecf7 80%, #d8dde6 100%);
+  border-radius: 10px;
+  box-shadow: 0 3px 20px #3382b944;
+  border: 1px solid #aac1d7;
+  margin-bottom: 12px;
+}
+
+/* Monitoramento Glicose */
+.glicose-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 28px 0;
+}
+
+.glicose-valor {
+  display: flex;
+  align-items: baseline;
+  font-size: 2.7em;
+  color: #3382b9;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px #5b7fa744;
+}
+
+.glicose-label {
+  font-size: 1em;
+  color: #245076;
+  margin-left: 8px;
+  text-shadow: 0 1px 0 #eaf6fb;
+}
+
+#glicoseGrafico {
+  background: linear-gradient(135deg, #e1ecf7 80%, #d8dde6 100%);
+  border-radius: 10px;
+  box-shadow: 0 3px 20px #3382b944;
+  border: 1px solid #aac1d7;
+  margin-bottom: 12px;
+}
+
+
+.calorias-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.calorias-valor {
+  display: flex;
+  align-items: baseline;
+  font-size: 2.7em;
+  color: #3382b9;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px #7fa4c155;
+}
+
+.calorias-label {
+  font-size: 1em;
+  color: #245076;
+  margin-left: 10px;
+}
+#calendario, #relogio {
+  font-size: 2em;
+  color: #245076;
+  margin-top: 10px;
+  text-shadow: 0 1px 0 #eaf6fb;
+  text-align: center;
+  background-color: rgba(0,0,0,0);
+}

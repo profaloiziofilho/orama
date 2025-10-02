@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Data e Hora em Tempo Real</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="calendario">
+  Carregando...
+</div>
+<div id="relogio">
+  Carregando...
+</div>
+<script>
+function atualizarRelogio() {
+  const agora = new Date();
+  const datas = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+  const horas = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+  const dataFormatada = agora.toLocaleString('pt-BR', datas); 
+
+  const horaFormatada = agora.toLocaleString('pt-BR', horas);
+
+  document.getElementById('calendario').innerText = `${dataFormatada} `;
+  document.getElementById('relogio').innerText = `${horaFormatada}`;
+}
+
+// Chame a função imediatamente e depois a cada segundo
+atualizarRelogio();
+setInterval(atualizarRelogio, 1000);
+</script>
+
+</body>
+</html>

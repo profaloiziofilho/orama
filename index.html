@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoramento de Saúde e Bem-Estar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="time()">
+  <div id="app">
+    <!-- Tela de Entrada -->
+    <section id="tela-entrada" class="tela ativa" onclick="mostrarTela('tela-saude')">
+      <iframe src="relogio.html" frameborder="0"></iframe>
+      
+      <!--button onclick="mostrarTela('tela-saude')">Começar</button-->
+    </section>
+<section id="tela-info" class="tela ativa" onclick="mostrarTela('tela-saude')">
+      
+      <h1></h1>
+      <h3>Monitoramento de Saúde e Bem-Estar</h3>
+      <p>
+        Este aplicativo ajuda você a acompanhar sua saúde e hábitos de bem-estar.<br>
+        Acesse rapidamente indicadores vitais e hábitos saudáveis.
+      </p>
+      <p>Versão demo 1.0</p>
+      <!--button onclick="mostrarTela('tela-saude')">Começar</button-->
+    </section>
+    <!-- Tela Saúde -->
+    <section id="tela-saude" class="tela">
+      <!--h2>Saúde</h2-->
+      <div class="icones-funcoes">
+        <div class="icone" onclick="mostrarTela('tela-cardiaco')"><span class="emoji">❤️</span><span>Cardíaco</span></div>
+        <div class="icone" onclick="mostrarTela('tela-glicose')"><span class="emoji">🩸</span><span>Glicose</span></div>
+        <div class="icone" onclick="mostrarTela('tela-calorias')"><span class="emoji">🔥</span><span>Calorias</span></div>
+        <div class="icone" onclick="mostrarTela('tela-agua')"><span class="emoji">💧</span><span>Água</span></div>
+        <div class="icone" onclick="mostrarTela('tela-pressao')"><span class="emoji">🩺</span><span>Pressão</span></div>
+        <div class="icone" onclick="mostrarTela('tela-oxigenio')"><span class="emoji">🌬️</span><span>Oxigênio</span></div>
+      </div>
+      <button onclick="mostrarTela('tela-bemestar')">Ir para Bem-Estar</button>
+      <button onclick="mostrarTela('tela-entrada')">Voltar</button>
+    </section>
+    <!-- Tela Saúde -->
+     
+    <!-- Tela Monitoramento Cardíaco -->
+    <section id="tela-cardiaco" class="tela" onclick="mostrarTela('tela-saude')">
+      <h2>Monitoramento Cardíaco<span class="emoji">❤️</span></h2>
+      <div class="cardiaco-container">
+        <div class="cardiaco-valor">
+          <span id="bpmValue">72</span>
+          <span class="bpm-label">bpm</span>
+        </div>
+        <canvas id="cardiacoGrafico" width="400" height="120"></canvas>
+      </div>
+      <!--button onclick="mostrarTela('tela-saude')">Voltar para Saúde</button-->
+    </section>
+    <!-- Tela Monitoramento Cardíaco -->
+
+    <!-- Tela Monitoramento Glicose -->
+    <section id="tela-glicose" class="tela" onclick="mostrarTela('tela-saude')">
+      <h2>Monitoramento de Glicose<span class="emoji">🩸</span></h2>
+      <div class="glicose-container">
+        <div class="glicose-valor">
+          <span id="glicoseValue">98</span>
+          <span class="glicose-label">mg/dL</span>
+        </div>
+        <!--canvas id="glicoseGrafico" width="400" height="120"></canvas-->
+      </div>
+      <!--button onclick="mostrarTela('tela-saude')">Voltar para Saúde</button-->
+    </section>
+    <!-- Tela Monitoramento Glicose -->
+ <!-- Tela Calorias Gastas -->
+    <section id="tela-calorias" class="tela" onclick="mostrarTela('tela-saude')">
+      <h2>Calorias Gastas<span class="emoji">🔥</span></h2>
+      <div class="calorias-container">
+        <div class="calorias-valor">
+          <span id="valorCalorias">146</span>
+          <span class="calorias-label">kcal gastas hoje</span>
+        </div>
+      </div>
+      <!--button onclick="mostrarTela('tela-saude')">Voltar para Saúde</button-->
+    </section>
+
+
+    <!-- Tela Bem-Estar -->
+    <section id="tela-bemestar" class="tela">
+      <h2>Bem-Estar</h2>
+      <div class="icones-funcoes">
+        <div class="icone"><span class="emoji">🚶</span><span>Passos</span></div>
+        <div class="icone"><span class="emoji">😴</span><span>Sono</span></div>
+        <div class="icone"><span class="emoji">😬</span><span>Estresse</span></div>
+        <div class="icone"><span class="emoji">🩸</span><span>Ciclo Menstrual</span></div>
+        <div class="icone"><span class="emoji">📍</span><span>Localização</span></div>
+      </div>
+      <button onclick="mostrarTela('tela-saude')">Voltar para Saúde</button>
+    </section>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
