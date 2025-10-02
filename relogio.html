@@ -16,7 +16,7 @@
 function atualizarRelogio() {
   const agora = new Date();
   const datas = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
-  const horas = { hour: '2-digit', minute: '2-digit' };
+  const horas = { hour: '2-digit', minute: '2-digit'};
   const dataFormatada = agora.toLocaleString('pt-BR', datas); 
 
   const horaFormatada = agora.toLocaleString('pt-BR', horas);
