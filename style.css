@@ -218,3 +218,6 @@ button:hover {
   text-align: center;
   background-color: rgba(0,0,0,0);
 }
+#relogio {
+  font-size: 4em;
+}
